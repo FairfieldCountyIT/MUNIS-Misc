@@ -1,0 +1,88 @@
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [custom].[bss_xr_termcode](
+	[code] [char](4) NOT NULL,
+	[voluntary] [varchar](1) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[code] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [custom].[bss_xr_ethnic](
+	[computed] [int] NOT NULL,
+	[description] [varchar](99) NOT NULL,
+	[bss_output] [varchar](1) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[computed] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [custom].[bss_skiploc](
+	[loc] [smallint] NOT NULL,
+	[description] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[loc] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [custom].[bss_skipemp](
+	[emp] [smallint] NOT NULL,
+	[description] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[emp] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [custom].[bss_marital](
+	[prem_marital] [char](1) NOT NULL,
+	[bss_marital_code] [varchar](1) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[prem_marital] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [custom].[bss_dedcodes](
+	[dedcode] [smallint] NOT NULL,
+	[description] [nvarchar](50) NOT NULL,
+	[codeuse] [nchar](1) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[dedcode] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [custom].[bss_config](
+	[config_name] [nvarchar](50) NOT NULL,
+	[config_value] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[config_name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
